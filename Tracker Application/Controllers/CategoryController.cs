@@ -45,7 +45,7 @@ namespace Tracker_Application.Controllers
         // GET: Category/Create
         public IActionResult Create()
         {
-            return View();
+            return View(new Category());
         }
 
         // POST: Category/Create
