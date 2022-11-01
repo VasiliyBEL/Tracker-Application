@@ -21,7 +21,7 @@ namespace Tracker_Application.Controllers
         // GET: Category
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Categories.ToListAsync());
+            return View(await _context.Categories.ToListAsync());
         }
 
         // GET: Category/Details/5
@@ -43,9 +43,12 @@ namespace Tracker_Application.Controllers
         }
 
         // GET: Category/AddOrEdit
-        public IActionResult AddOrEdit()
+        public IActionResult AddOrEdit(int id = 0)
         {
-            return View(new Category());
+            if (id == 0)
+                return View(new Category());
+            else
+                return View(_context.Categories.Find(id));
         }
 
         // POST: Category/AddOrEdit
@@ -96,14 +99,14 @@ namespace Tracker_Application.Controllers
             {
                 _context.Categories.Remove(category);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool CategoryExists(int id)
         {
-          return _context.Categories.Any(e => e.CategoryId == id);
+            return _context.Categories.Any(e => e.CategoryId == id);
         }
     }
 }
