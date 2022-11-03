@@ -6,7 +6,7 @@
     <title>Tracker_Application</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     @*<link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/20.3.47/material.css" />*@
-    <link href="https://cdn.syncfusion.com/ej2/20.3.47/bootstrap5-dark.css" rel="stylesheet"/>
+    <link href="https://cdn.syncfusion.com/ej2/20.3.47/bootstrap5-dark.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -38,19 +38,29 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-10">
-                        <main role="main" class="pb-3">
-                            <div class="row">
-                                <div class="col-md-7">
-                                    <div class="d-flex flex-column mb-5">
-                                        <div class="d-flex mb-1">
-                                            <h3 class="fw-bold">@ViewData["PageTitle"]</h3>
-                                        </div>
-                                        @*breadcrumb*@
+                <main role="main" class="pb-3">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="d-flex flex-column mb-5">
+                                <div class="d-flex mb-1">
+                                    <div class="flex-grow-1">
+                                        <h3 class="fw-bold">@ViewData["PageTitle"]</h3>
+                                    </div>
+                                    <div>
+                                        @if (ViewData["PageActionText"] != null)
+                                        {
+                                            <a class="btn btn-success" href="@ViewData["PageActionUrl"]">
+                                                @ViewData["PageActionText"]
+                                            </a>
+                                        }
                                     </div>
                                 </div>
+                                @*breadcrumb*@
                             </div>
-            @RenderBody()
-        </main>
+                        </div>
+                    </div>
+                    @RenderBody()
+                </main>
             </div>
         </div>
 
@@ -60,6 +70,6 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-     <ejs-scripts></ejs-scripts>
+    <ejs-scripts></ejs-scripts>
 </body>
 </html>
