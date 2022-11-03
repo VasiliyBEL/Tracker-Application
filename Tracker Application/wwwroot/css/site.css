@@ -28,16 +28,22 @@ body {
     font-size: x-large;
 }
 
+/*BreadCrumb*/
+.e-breadcrumb a, .e-breadcrumb a:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
 /*Button*/
-.btn:focus, .btn:active{
-    outline:none !important;
-    box-shadow:none;
+.btn:focus, .btn:active {
+    outline: none !important;
+    box-shadow: none;
 }
 
 /*Hyperlink*/
-.no-a-decoration, .no-a-decoration:hover{
-    text-decoration:none;
-    color:inherit;
+.no-a-decoration, .no-a-decoration:hover {
+    text-decoration: none;
+    color: inherit;
 }
 
 /*Grid*/
