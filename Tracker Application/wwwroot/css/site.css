@@ -5,7 +5,12 @@ html {
 @media (min-width: 768px) {
     html {
         font-size: 16px;
+        font-family: "Inder"
     }
+}
+
+*:not(.fa-solid):not(.fa):not(.e-icons) {
+    font-family: "Inter"
 }
 
 html {
