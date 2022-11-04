@@ -7,8 +7,9 @@
 <div class="row">
     <div class="col-md-7">
          <div class="widget p-5" style="background-color:#212b36">
-        <form asp-action="Create">
+        <form asp-action="AddOrEdit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" name="TransactionId" value="@Model.TransactionId" />
             <div class="mb-3">
                 <ejs-datepicker id="date" ejs-for="Date"
                 placeholder="Date" floatLabelType="Always"
@@ -34,9 +35,7 @@
                 floatLabelType="Always" multiline="true"></ejs-textbox>
                 <span asp-validation-for="Note" class="text-danger"></span>
             </div>
-            <div class="mb-3">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+            <ejs-button id="submit" type="submit" content="Submit" cssClass="e-success"></ejs-button>
         </form>
         </div>
     </div>

@@ -26,10 +26,13 @@ namespace Tracker_Application.Controllers
         }
 
         // GET: Transaction/AddOrEdit
-        public IActionResult AddOrEdit()
+        public IActionResult AddOrEdit(int id = 0)
         {
             PopulateCategories();
-            return View(new Transaction());
+            if (id == 0)
+                return View(new Transaction());
+            else
+                return View(_context.Transactions.Find(id));
         }
 
         // POST: Transaction/AddOrEdit
@@ -41,11 +44,14 @@ namespace Tracker_Application.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(transaction);
+                if (transaction.TransactionId == null)
+                    _context.Add(transaction);
+                else
+                    _context.Update(transaction);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryID"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", transaction.CategoryID);
+            PopulateCategories();
             return View(transaction);
         }
 
@@ -63,7 +69,7 @@ namespace Tracker_Application.Controllers
             {
                 _context.Transactions.Remove(transaction);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
