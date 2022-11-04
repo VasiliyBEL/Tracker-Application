@@ -18,11 +18,12 @@
             <div class="mb-3">
                 <ejs-dropdownlist id="DropDownListCategory" ejs-for="CategoryID"
                 dataSource="@ViewBag.Categories" placeholder="Category"
-                floatLabelType="Always">
-            <e-dropdownlist-fields value="CategoryId" text="Title"></e-dropdownlist-fields>
+                floatLabelType="Always" allowFiltering="true" ignoreAccent="true"
+                filterType="Contains">
+            <e-dropdownlist-fields value="CategoryId" text="TitleWithIcon"></e-dropdownlist-fields>
                 </ejs-dropdownlist>
             </div>
-            <div class="mb-3">
+            <div class="mb-3"> 
                 <label asp-for="Amount" class="control-label"></label>
                 <input asp-for="Amount" class="form-control" />
                 <span asp-validation-for="Amount" class="text-danger"></span>
