@@ -47,7 +47,8 @@
     });
 }
 
-<ejs-sidebar id="sidebar" width="290px" enableDock>
+<ejs-sidebar id="sidebar" width="290px" enableDock dockSize="100px"
+             target=".dock-target" enableGestures=false>
     <e-content-template>
 
         <div class="logo-wrapper">
@@ -55,7 +56,7 @@
                 @*<img src="~/Tracker.png"/>*@
             </div>
             <div class="w-100"></div>
-            <i id="sidebar-toggler" class="fa-solid fa-angles-left"></i>
+            <i id="sidebar-toggler" class="fa-solid"></i>
         </div>
 
         <div class="profile-wrapper">
