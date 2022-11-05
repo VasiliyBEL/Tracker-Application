@@ -110,7 +110,7 @@
             </div>
             <div class="px-4 pb-4">
                 <ejs-grid id="recent=transactions"
-                          dataSource="@ViewBag.RecentTransactions">
+                          dataSource="@ViewBag.RecentTransactions" gridLines="None">
                     <e-grid-columns>
                         <e-grid-column headerText="Category" field="CategoryTitleWithIcon"></e-grid-column>
                         <e-grid-column headerText="Date" field="Date" width="110px"
@@ -121,5 +121,11 @@
             </div>
         </div>
     </div>
-    <
+    <div class="col-md-6">
+        <div class="widget h-100">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <span><i class="fa-solid fa-plus fa-2xl"></i> Widget</span>
+            </div>
+        </div>
+    </div>
 </div>
