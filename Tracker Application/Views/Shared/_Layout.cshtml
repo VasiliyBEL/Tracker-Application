@@ -41,30 +41,33 @@
     <div class="main-content">
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-10">
+            <div class="@(ViewData["isDashboard"] == null?"col-md-10":"col-md-12")">
                 <main role="main" class="pb-3">
-                    <div class="row">
-                        <div class="col-md-7">
-                            <div class="d-flex flex-column mb-5">
-                                <div class="d-flex mb-1">
-                                    <div class="flex-grow-1">
-                                        <h3 class="fw-bold">@ViewData["PageTitle"]</h3>
-                                    </div>
-                                    <div>
-                                        @if (ViewData["PageActionText"] != null)
-                                        {
-                                            <a class="btn btn-success" href="@ViewData["PageActionUrl"]">
-                                                @ViewData["PageActionText"]
-                                            </a>
-                                        }
+                        @if (ViewData["isDashboard"] == null)
+                        {
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <div class="d-flex flex-column mb-5">
+                                        <div class="d-flex mb-1">
+                                            <div class="flex-grow-1">
+                                                <h3 class="fw-bold">@ViewData["PageTitle"]</h3>
+                                            </div>
+                                            <div>
+                                                @if (ViewData["PageActionText"] != null)
+                                                {
+                                                    <a class="btn btn-success" href="@ViewData["PageActionUrl"]">
+                                                        @ViewData["PageActionText"]
+                                                    </a>
+                                                }
+                                            </div>
+                                        </div>
+                                        <ejs-breadcrumb id="breadcrumb"
+                                separatorTemplate="@Html.Raw("<span class='fa-solid fa-angle-right'></span>")"></ejs-breadcrumb>
                                     </div>
                                 </div>
-                                <ejs-breadcrumb id="breadcrumb"
-                                separatorTemplate="@Html.Raw("<span class='fa-solid fa-angle-right'></span>")"></ejs-breadcrumb>
                             </div>
-                        </div>
-                    </div>
-                    @RenderBody()
+                        }
+                        @RenderBody()
                 </main>
             </div>
         </div>
