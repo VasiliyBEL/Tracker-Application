@@ -51,7 +51,7 @@
             <div class="p-4">
                 <h5 class="fw-bold">Expense By Category</h5>
             </div>
-            <ejs-accumulationchart id="doughnut" enableSmartLabels background="#1a222b">
+            <ejs-accumulationchart id="doughnutchart" enableSmartLabels background="#1a222b">
                 <e-accumulation-series-collection>
                     <e-accumulation-series dataSource="@ViewBag.DoughnutChartData"
                                            xName="categoryTitleWithIcon" yName="amount"
@@ -72,8 +72,13 @@
                 <h5 class="fw-bold">Income vs Expense</h5>
             </div>
         </div>
-        <ejs-chart id="spline-chart">
-
+        <ejs-chart id="spline-chart" background="#1a222b">
+            <e-series-collection>
+                <e-series dataSource="@ViewBag.SplineChartDate" xName="day"
+                yName="income" name="Income" type="@Syncfusion.EJ2.Charts.ChartSeriesType.Spline"></e-series>
+                <e-series dataSource="@ViewBag.SplineChartDate" xName="day"
+                yName="expense" name="Expense" type="@Syncfusion.EJ2.Charts.ChartSeriesType.Spline"></e-series>
+            </e-series-collection>
         </ejs-chart>
     </div>
 </div>
