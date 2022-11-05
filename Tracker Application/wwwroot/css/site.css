@@ -122,6 +122,35 @@ body {
     border-bottom-right-radius: 5px;
 }
 
+/*Navbar*/
+nav.navbar {
+    background-color: rgba(18, 22, 29);
+}
+
+    nav.navbar i {
+        padding: 10px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+        nav.navbar i:hover, nav.navbar img:hover {
+            cursor: pointer;
+            background-color: #48545f14;
+            transform: scale(1.05) translateZ(0px);
+        }
+
+nav.navbar {
+    margin-left: 290px;
+}
+
+/*Profile Pic*/
+img.profile-pic{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
 /*Radio button Group*/
 .e-btn-group.custom-rbt-group {
     width: 100%;
