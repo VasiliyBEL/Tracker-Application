@@ -94,9 +94,32 @@
                           yName="expense" name="Expense" type="@Syncfusion.EJ2.Charts.ChartSeriesType.Spline"></e-series>
             </e-series-collection>
             <e-chart-legendsettings position="Top" alignment="Far" toggleVisibility="false">
-                    <e-legendsettings-textstyle color="#fff" size="1rem"></e-legendsettings-textstyle>
-                </e-chart-legendsettings>
-                <e-chart-tooltipsettings enable shared></e-chart-tooltipsettings>
+                <e-legendsettings-textstyle color="#fff" size="1rem"></e-legendsettings-textstyle>
+            </e-chart-legendsettings>
+            <e-chart-tooltipsettings enable shared></e-chart-tooltipsettings>
         </ejs-chart>
     </div>
+</div>
+
+@*Recent Transactions and More*@
+<div class="row">
+    <div class="col-md-6">
+        <div class="widget">
+            <div class="p-4">
+                <h5 class="fw-bold">Recent Transactions</h5>
+            </div>
+            <div class="px-4 pb-4">
+                <ejs-grid id="recent=transactions"
+                          dataSource="@ViewBag.RecentTransactions">
+                    <e-grid-columns>
+                        <e-grid-column headerText="Category" field="CategoryTitleWithIcon"></e-grid-column>
+                        <e-grid-column headerText="Date" field="Date" width="110px"
+                                       type="date" format="MMM-dd-yy" textAlign="Left"></e-grid-column>
+                        <e-grid-column headerText="Amount" field="FormattedAmount" textAlign="Right" width="110px"></e-grid-column>
+                    </e-grid-columns>
+                </ejs-grid>
+            </div>
+        </div>
+    </div>
+    <
 </div>
