@@ -54,16 +54,26 @@
             <ejs-accumulationchart id="doughnut" enableSmartLabels background="#1a222b">
                 <e-accumulation-series-collection>
                     <e-accumulation-series dataSource="@ViewBag.DoughnutChartData"
-                    xName="categoryTitleWithIcon" yName="amount"
-                    innerRadius="60%" legendShape="Circle">
-                    <e-accumulationseries-datalabel name="formattedAmount" visible></e-accumulationseries-datalabel>
-                </e-accumulation-series>
+                                           xName="categoryTitleWithIcon" yName="amount"
+                                           innerRadius="60%" legendShape="Circle">
+                        <e-accumulationseries-datalabel name="formattedAmount" visible></e-accumulationseries-datalabel>
+                    </e-accumulation-series>
                 </e-accumulation-series-collection>
                 <e-accumulationchart-legendsettings position="Top" toggleVisibility="false">
                     <e-legendsettings-textstyle color="#fff" size="1rem"></e-legendsettings-textstyle>
                 </e-accumulationchart-legendsettings>
+                <e-accumulationchart-tooltipsettings enable></e-accumulationchart-tooltipsettings>
             </ejs-accumulationchart>
         </div>
     </div>
-    <div class="col-md-8"></div>
+    <div class="col-md-8">
+        <div class="widget chart">
+            <div class="p-4">
+                <h5 class="fw-bold">Income vs Expense</h5>
+            </div>
+        </div>
+        <ejs-chart id="spline-chart">
+
+        </ejs-chart>
+    </div>
 </div>
