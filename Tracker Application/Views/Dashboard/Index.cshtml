@@ -44,15 +44,20 @@
     </div>
 </div>
 
-@*Donut and Spline Chart*@
+@*Doughnut and Spline Chart*@
 <div class="row mb-4">
     <div class="col-md-4">
         <div class="widget chart">
             <div class="p-4">
                 <h5 class="fw-bold">Expense By Category</h5>
             </div>
-            <ejs-accumulationchart id="donutchart" background="#1a222b">
-
+            <ejs-accumulationchart id="doughnut" background="#1a222b">
+                <e-accumulation-series-collection>
+                    <e-accumulation-series dataSource="@ViewBag.DoughnutChartData"
+                    xName="categoryTitleWithIcon" yName="amount">
+                    <e-accumulationseries-datalabel name="formattedAmount"></e-accumulationseries-datalabel>
+                </e-accumulation-series>
+                </e-accumulation-series-collection>
             </ejs-accumulationchart>
         </div>
     </div>
