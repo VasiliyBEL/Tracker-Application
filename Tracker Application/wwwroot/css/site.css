@@ -5,17 +5,17 @@ html {
 @media (min-width: 768px) {
     html {
         font-size: 16px;
-        font-family: "Inder"
     }
-}
-
-*:not(.fa-solid):not(.fa):not(.e-icons) {
-    font-family: "Inter"
 }
 
 html {
     position: relative;
     min-height: 100%;
+    font-family: "Inter";
+}
+
+*:not(.fa-solid):not(.fa):not(.e-icons) {
+    font-family: "Inter"
 }
 
 body {
@@ -34,6 +34,7 @@ body {
     overflow-y: auto;
     height: 92vh;
 }
+
 
 /*BreadCrumb*/
 .e-breadcrumb a, .e-breadcrumb a:hover {
@@ -182,6 +183,8 @@ body {
             margin-top: 35px;
         }
 
+
+
 /*Navbar*/
 nav.navbar {
     background-color: rgba(18, 22, 29);
@@ -226,7 +229,7 @@ img.profile-pic {
         line-height: 1;
     }
 
-/*Radio button Group*/
+/*Radio Button Group*/
 .e-btn-group.custom-rbt-group {
     width: 100%;
 }
@@ -313,7 +316,6 @@ img.profile-pic {
 #sidebar.e-close #sidebar-toggler:before {
     content: '\f101'
 }
-
 
 /*Widget*/
 .widget {
