@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 
 namespace Tracker_Application.Models
 {
@@ -16,7 +17,7 @@ namespace Tracker_Application.Models
         [Range(1, int.MaxValue, ErrorMessage = "Amount should be greater than 0.")]
         public int Amount { get; set; }
 
-        [Column(TypeName = "nvarchar(75)")]
+        [Column(TypeName = "nvarchar(255)")]
         public string? Note { get; set; }
 
         public DateTime Date { get; set; } = DateTime.Now;
@@ -30,12 +31,13 @@ namespace Tracker_Application.Models
             }
         }
 
+        CultureInfo culture = CultureInfo.CreateSpecificCulture("en-US");
         [NotMapped]
         public string? FormattedAmount
         {
             get
             {
-                return ((Category == null || Category.Type == "Expense") ? "- " : "+ ") + Amount.ToString("C0");
+                return ((Category == null || Category.Type == "Expense") ? "- " : "+ ") + Amount.ToString("C0", culture);
             }
         }
     }
