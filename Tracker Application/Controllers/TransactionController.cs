@@ -44,7 +44,7 @@ namespace Tracker_Application.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (transaction.TransactionId == null)
+                if (transaction.TransactionId == 0)
                     _context.Add(transaction);
                 else
                     _context.Update(transaction);
