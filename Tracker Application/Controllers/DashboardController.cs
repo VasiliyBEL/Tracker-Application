@@ -18,7 +18,7 @@ namespace Tracker_Application.Controllers
         public async Task<ActionResult> Index()
         {
             //Last 30 Days
-            DateTime StartDate = DateTime.Today.AddDays(-30);
+            DateTime StartDate = DateTime.Today.AddDays(-29);
             DateTime EndDate = DateTime.Today;
 
             List<Transaction> SelectedTransactions = await _context.Transactions
@@ -86,7 +86,7 @@ namespace Tracker_Application.Controllers
                 .Select(i => StartDate.AddDays(i).ToString("dd-MMM"))
                 .ToArray();
 
-            ViewBag.SplineChartDate = from day in Last30Days
+            ViewBag.SplineChartData = from day in Last30Days
                                       join income in IncomeSummary on day equals income.day into dayIncomeJoined
                                       from income in dayIncomeJoined.DefaultIfEmpty()
                                       join expense in ExpenseSummary on day equals expense.day into expenseJoined
